@@ -21,16 +21,14 @@ const seedDatabase = async () => {
         name: "John Doe",
         email: "john@example.com",
         phone: "1234567890",
-        passwordHash:
-          "$2a$10$XfcHSDOJmHLaWG0Vz5T7C.jmuK9QzSOcqJuGiwhgLoOWz0R1YlzGq", // 'password123'
+        passwordHash: "password123",
         status: "active",
       },
       {
         name: "Jane Smith",
         email: "jane@example.com",
         phone: "0987654321",
-        passwordHash:
-          "$2a$10$XfcHSDOJmHLaWG0Vz5T7C.jmuK9QzSOcqJuGiwhgLoOWz0R1YlzGq", // 'password123'
+        passwordHash: "password123",
         status: "active",
       },
     ]);
@@ -41,8 +39,7 @@ const seedDatabase = async () => {
         name: "Mike Driver",
         email: "mike@example.com",
         phone: "1122334455",
-        passwordHash:
-          "$2a$10$XfcHSDOJmHLaWG0Vz5T7C.jmuK9QzSOcqJuGiwhgLoOWz0R1YlzGq", // 'password123'
+        passwordHash: "password123",
         gender: "male",
         vehicleDetails: {
           type: "car",
@@ -56,8 +53,7 @@ const seedDatabase = async () => {
         name: "Sarah Driver",
         email: "sarah@example.com",
         phone: "5544332211",
-        passwordHash:
-          "$2a$10$XfcHSDOJmHLaWG0Vz5T7C.jmuK9QzSOcqJuGiwhgLoOWz0R1YlzGq", // 'password123'
+        passwordHash: "password123",
         gender: "female",
         vehicleDetails: {
           type: "car",
@@ -137,7 +133,7 @@ const seedDatabase = async () => {
           total: 14,
         },
         paymentStatus: "completed",
-        paymentMethod: "card",
+        paymentMethod: "credit_card",
         route: {
           distance: 5.3,
           duration: 15,

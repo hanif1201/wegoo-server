@@ -88,6 +88,7 @@ exports.loginUser = async (req, res) => {
 
     sendTokenResponse(user, 200, res);
   } catch (err) {
+    console.error("Login error:", err);
     res.status(500).json({
       success: false,
       message: "Server error",
@@ -144,10 +145,10 @@ const sendTokenResponse = (user, statusCode, res) => {
   // Create token
   const token = user.getSignedJwtToken();
 
+  // Use a default of 7 days if JWT_COOKIE_EXPIRE is missing or invalid
+  const days = Number(process.env.JWT_COOKIE_EXPIRE) || 7;
   const options = {
-    expires: new Date(
-      Date.now() + process.env.JWT_COOKIE_EXPIRE * 24 * 60 * 60 * 1000
-    ),
+    expires: new Date(Date.now() + days * 24 * 60 * 60 * 1000),
     httpOnly: true,
   };
 
